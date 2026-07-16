@@ -1,0 +1,107 @@
+.counting-trainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 24px;
+  padding: 40px 20px;
+}
+
+.stats-bar {
+  display: flex;
+  gap: 24px;
+  font-family: var(--mono);
+  font-size: 14px;
+  color: var(--text);
+}
+
+.guess-form,
+.settings-screen,
+.summary-screen {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+}
+
+.guess-form-row {
+  display: flex;
+  gap: 8px;
+}
+
+.guess-form input {
+  width: 80px;
+  font-size: 20px;
+  text-align: center;
+  padding: 6px;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  background: var(--bg);
+  color: var(--text-h);
+}
+
+.guess-form button,
+.settings-screen button,
+.summary-screen button,
+.feedback-panel button {
+  font-size: 16px;
+  padding: 10px 20px;
+  border-radius: 6px;
+  border: 1px solid var(--accent-border);
+  background: var(--accent-bg);
+  color: var(--text-h);
+  cursor: pointer;
+}
+
+.feedback-panel {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  padding: 16px 24px;
+  border-radius: 10px;
+  border: 1px solid var(--border);
+  max-width: 420px;
+  text-align: center;
+}
+
+.feedback-panel.correct {
+  border-color: #2fa84f;
+}
+
+.feedback-panel.wrong {
+  border-color: #d13438;
+}
+
+.feedback-headline {
+  font-size: 20px;
+  font-weight: 600;
+  color: var(--text-h);
+}
+
+.settings-screen {
+  max-width: 480px;
+  margin: 0 auto;
+  padding: 40px 20px;
+  text-align: center;
+}
+
+.settings-field {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+.settings-field select {
+  font-size: 16px;
+  padding: 6px;
+  border-radius: 6px;
+  border: 1px solid var(--border);
+  background: var(--bg);
+  color: var(--text-h);
+}
+
+.summary-accuracy {
+  font-size: 48px;
+  font-weight: 600;
+  color: var(--accent);
+}

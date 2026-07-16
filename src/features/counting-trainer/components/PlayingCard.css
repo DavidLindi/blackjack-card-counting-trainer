@@ -1,0 +1,32 @@
+.playing-card {
+  width: 120px;
+  height: 168px;
+  border-radius: 10px;
+  border: 1px solid var(--border);
+  background: var(--bg);
+  box-shadow: var(--shadow);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+  margin: 0 auto;
+}
+
+.playing-card .rank {
+  font-size: 40px;
+  font-weight: 600;
+  font-family: var(--heading);
+}
+
+.playing-card .suit {
+  font-size: 32px;
+}
+
+.playing-card.red {
+  color: #d13438;
+}
+
+.playing-card.black {
+  color: var(--text-h);
+}
