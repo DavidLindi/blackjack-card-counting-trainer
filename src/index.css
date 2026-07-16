@@ -107,3 +107,39 @@ code {
   padding: 4px 8px;
   background: var(--code-bg);
 }
+
+.btn {
+  font-size: 16px;
+  font-family: var(--sans);
+  padding: 10px 22px;
+  border-radius: 8px;
+  border: 1px solid transparent;
+  cursor: pointer;
+  transition: transform 0.1s ease, box-shadow 0.15s ease, background 0.15s ease;
+}
+
+.btn:active {
+  transform: translateY(1px);
+}
+
+.btn-primary {
+  background: var(--accent);
+  color: #fff;
+  box-shadow: 0 2px 8px rgba(170, 59, 255, 0.35);
+}
+
+.btn-primary:hover {
+  box-shadow: 0 4px 14px rgba(170, 59, 255, 0.45);
+}
+
+.btn-secondary {
+  background: var(--accent-bg);
+  border-color: var(--accent-border);
+  color: var(--text-h);
+}
+
+.btn-ghost {
+  background: var(--bg);
+  border-color: var(--border);
+  color: var(--text);
+}

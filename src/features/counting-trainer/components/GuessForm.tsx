@@ -23,7 +23,7 @@ export function GuessForm({ onSubmit }: { onSubmit: (guess: number) => void }) {
           onChange={(e) => setValue(e.target.value)}
           autoFocus
         />
-        <button type="submit">Prüfen</button>
+        <button type="submit" className="btn btn-primary">Prüfen</button>
       </div>
     </form>
   )

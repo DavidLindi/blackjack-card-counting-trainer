@@ -6,16 +6,31 @@ import { PlayingCard } from './components/PlayingCard'
 import { GuessForm } from './components/GuessForm'
 import { FeedbackPanel } from './components/FeedbackPanel'
 import { StatsBar } from './components/StatsBar'
+import { HelpModal } from './components/HelpModal'
 import './CountingTrainer.css'
 
 export function CountingTrainer() {
   const [config, setConfig] = useState<TrainerConfig | null>(null)
+  const [helpOpen, setHelpOpen] = useState(false)
 
-  if (!config) {
-    return <SettingsScreen onStart={setConfig} />
-  }
+  return (
+    <>
+      <button type="button" className="btn btn-ghost help-button" onClick={() => setHelpOpen(true)}>
+        ? Wie funktioniert Kartenzählen?
+      </button>
+      {helpOpen && <HelpModal onClose={() => setHelpOpen(false)} />}
 
-  return <Session key={`${config.deckCount}-${config.system.id}-${Date.now()}`} config={config} onRestart={() => setConfig(null)} />
+      {!config ? (
+        <SettingsScreen onStart={setConfig} />
+      ) : (
+        <Session
+          key={`${config.deckCount}-${config.system.id}-${Date.now()}`}
+          config={config}
+          onRestart={() => setConfig(null)}
+        />
+      )}
+    </>
+  )
 }
 
 function Session({ config, onRestart }: { config: TrainerConfig; onRestart: () => void }) {
@@ -44,7 +59,7 @@ function Session({ config, onRestart }: { config: TrainerConfig; onRestart: () =
         trueCount={session.currentTrueCount}
       />
 
-      <PlayingCard card={session.currentCard} />
+      <PlayingCard key={session.revealedCount} card={session.currentCard} />
 
       {session.phase === 'guessing' && <GuessForm onSubmit={session.submitGuess} />}
 

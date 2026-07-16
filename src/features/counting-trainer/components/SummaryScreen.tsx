@@ -16,7 +16,7 @@ export function SummaryScreen({
         Du hast {correctAnswers} von {totalAnswers} Counts richtig geschätzt.
       </p>
       <p className="summary-accuracy">{accuracy}%</p>
-      <button type="button" onClick={onRestart}>
+      <button type="button" className="btn btn-primary" onClick={onRestart}>
         Neuer Schuh
       </button>
     </div>
